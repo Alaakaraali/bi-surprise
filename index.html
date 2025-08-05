@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية عيد ميلاد سعيد ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #f8bbd0, #fce4ec);
+            margin: 0;
+        }
+
+        #passwordPage {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            margin: 50px;
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+        }
+
+        #passwordPage h2 {
+            font-size: 26px;
+            color: #880e4f;
+            margin-bottom: 20px;
+        }
+
+        #passwordInput {
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ec407a;
+            border-radius: 10px;
+            outline: none;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(236, 64, 122, 0.2);
+        }
+
+        #passwordPage button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 18px;
+            background-color: #ec407a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #passwordPage button:hover {
+            background-color: #d81b60;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- صفحة كلمة المرور -->
+    <div id="passwordPage">
+        <h2>🔐 أدخل كلمة المرور لرؤية المفاجأة</h2>
+        <input type="password" id="passwordInput" placeholder="كلمة المرور">
+        <br><br>
+        <button onclick="checkPassword()">دخول</button>
+    </div>
+
+    <!-- محتوى الموقع (مخفي حتى إدخال كلمة المرور) -->
+    <div id="siteContent" style="display:none;">
+        <!-- الصفحة الرئيسية -->
+        <div id="mainPage" class="page active">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h1 class="main-title">🎉 عيد ميلاد سعيد حبيبي 🎉</h1>
+                <div class="lilac-image">
+                    <img src="ليلك.jpg" alt="زهر الليلك" />
+                </div>
+                <div class="buttons-container">
+                    <button class="gift-button" onclick="openGift()">
+                        🎁 افتح هديتك
+                    </button>
+                    <button class="message-button" onclick="openMessage()">
+                        💌 افتح رسالتك
+                    </button>
+                </div>
+                <button class="music-toggle" onclick="toggleMusic()">
+                    🎵 <span id="musicStatus">تشغيل الموسيقى</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- صفحة الهدية -->
+        <div id="giftPage" class="page">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="page-title">🎁 هديتك الخاصة</h2>
+                <div class="gift-container">
+                    <div class="video-placeholder">
+                        <div class="placeholder-content">
+                            <div class="gift-icon">🎬</div>
+                            <video controls width="100%" poster="thumbnail.jpg">
+                                <source src="mm.mp4">
+                            </video>
+                            <div class="hearts">💜💜💜</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="back-button" onclick="goBack()">
+                    ← العودة للصفحة الرئيسية
+                </button>
+            </div>
+        </div>
+
+        <!-- صفحة الرسالة -->
+        <div id="messagePage" class="page">
+            <div class="background-overlay"></div>
+            <div class="content">
+                <h2 class="page-title">💌 رسالتك الخاصة</h2>
+                <div class="message-container">
+                    <div class="message-card">
+                        <div class="message-header">
+                            <div class="heart-decoration">💜</div>
+                            <h3>رسالة من القلب</h3>
+                            <div class="heart-decoration">💜</div>
+                        </div>
+                        <div class="message-content">
+                            <p>هنا ستكون رسالتك الخاصة المليئة بالحب والمشاعر الجميلة...</p>
+                            <div class="message-placeholder">
+                                <div class="writing-animation">✍️</div>
+                                <p>"في السادس من آب، وُلد محمد...
+لم تكن صدفة، بل كان وعدًا للكون بأن يُنير جانبًا من ظلمته بروحه.
+
+وُلدت معه البدايات الجميلة،
+ومنذ ذلك الحين، كان كل شيء  مجرّد, مؤقّت...
+كلّ لحظة قبله ناقصة، وكلّ ضحكة دونه باهتة.
+
+محمد،  خُلقتَ على مهل،
+وكأن السماء كانت تصوغك نجمة نجمة، وتهمس لكل تفاصيلك أن تكتمل بي.
+
+كأنك خُلقت لتكون الحنان الذي لم أعرفه إلا فيك،
+لتكون الحضن الذي يسبق العالم كلّه،
+لتكون عيني التي ترى، وقلبي الذي ينبض، وذاكرتي التي تحفظ ة.
+
+في عيد ميلادك،  أهنئ نفسي،
+أن الحياة اختارتني لأكون قريبة منك 
+
+أعدك...
+ما دمتَ اتنفس، سأحبك أكثر من الأمس، وأقل من الغد.
+سأحبك بصمتي، بكلامي، بغنائي، بدعائي، وبكل الطرق التي لا تعرفها الكلمات.
+
+كل عام وأنت نعمة لا يليق بها إلا الامتنان،
+وكل عام وأنا أحبك، بلا عدد، بلا شروط، بلا نهاية</p>
+                            </div>
+                        </div>
+                        <div class="message-footer">
+                            <p>بكل الحب ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="back-button" onclick="goBack()">
+                    ← العودة للصفحة الرئيسية
+                </button>
+            </div>
+        </div>
+
+        <!-- عنصر الصوت -->
+        <audio id="backgroundMusic" loop preload="auto">
+            <source src="you-are-my-sunshine.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- كود التحقق من كلمة المرور -->
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").value;
+            if (password === "حب") {
+                document.getElementById("passwordPage").style.display = "none";
+                document.getElementById("siteContent").style.display = "block";
+            } else {
+                alert("كلمة المرور خاطئة! حاول مرة أخرى.");
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
