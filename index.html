@@ -10,10 +10,11 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(to bottom right, #f8bbd0, #fce4ec);
             margin: 0;
+            padding: 0;
         }
 
         #passwordPage {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -22,31 +23,33 @@
             animation: fadeIn 2s ease-in-out;
             background: rgba(255, 255, 255, 0.6);
             border-radius: 20px;
-            margin: 50px;
+            margin: 20px;
             box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+            padding: 20px;
         }
 
         #passwordPage h2 {
-            font-size: 26px;
+            font-size: 22px;
             color: #880e4f;
             margin-bottom: 20px;
         }
 
         #passwordInput {
             padding: 12px;
-            font-size: 18px;
+            font-size: 16px;
             border: 2px solid #ec407a;
             border-radius: 10px;
             outline: none;
-            width: 250px;
+            width: 80%;
+            max-width: 300px;
             text-align: center;
             box-shadow: 0 0 10px rgba(236, 64, 122, 0.2);
         }
 
         #passwordPage button {
             margin-top: 20px;
-            padding: 10px 25px;
-            font-size: 18px;
+            padding: 10px 20px;
+            font-size: 16px;
             background-color: #ec407a;
             color: white;
             border: none;
@@ -60,9 +63,49 @@
             background-color: #d81b60;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        .content, .message-card, .gift-container {
+            padding: 15px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            #passwordPage h2 {
+                font-size: 18px;
+            }
+
+            .main-title, .page-title {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .message-content p {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -76,7 +119,7 @@
         <button onclick="checkPassword()">دخول</button>
     </div>
 
-    <!-- محتوى الموقع (مخفي حتى إدخال كلمة المرور) -->
+    <!-- محتوى الموقع -->
     <div id="siteContent" style="display:none;">
         <!-- الصفحة الرئيسية -->
         <div id="mainPage" class="page active">
@@ -87,43 +130,30 @@
                     <img src="ليلك.jpg" alt="زهر الليلك" />
                 </div>
                 <div class="buttons-container">
-                    <button class="gift-button" onclick="openGift()">
-                        🎁 افتح هديتك
-                    </button>
-                    <button class="message-button" onclick="openMessage()">
-                        💌 افتح رسالتك
-                    </button>
+                    <button class="gift-button" onclick="openGift()">🎁 افتح هديتك</button>
+                    <button class="message-button" onclick="openMessage()">💌 افتح رسالتك</button>
                 </div>
-                <button class="music-toggle" onclick="toggleMusic()">
-                    🎵 <span id="musicStatus">تشغيل الموسيقى</span>
-                </button>
+                <button class="music-toggle" onclick="toggleMusic()">🎵 <span id="musicStatus">تشغيل الموسيقى</span></button>
             </div>
         </div>
 
         <!-- صفحة الهدية -->
-        <div id="giftPage" class="page">
+        <div id="giftPage" class="page" style="display:none;">
             <div class="background-overlay"></div>
             <div class="content">
                 <h2 class="page-title">🎁 هديتك الخاصة</h2>
                 <div class="gift-container">
-                    <div class="video-placeholder">
-                        <div class="placeholder-content">
-                            <div class="gift-icon">🎬</div>
-                            <video controls width="100%" poster="thumbnail.jpg">
-                                <source src="mm.mp4">
-                            </video>
-                            <div class="hearts">💜💜💜</div>
-                        </div>
-                    </div>
+                    <video controls width="100%" poster="thumbnail.jpg">
+                        <source src="mm.mp4">
+                    </video>
+                    <div class="hearts">💜💜💜</div>
                 </div>
-                <button class="back-button" onclick="goBack()">
-                    ← العودة للصفحة الرئيسية
-                </button>
+                <button class="back-button" onclick="goBack()">← العودة للصفحة الرئيسية</button>
             </div>
         </div>
 
         <!-- صفحة الرسالة -->
-        <div id="messagePage" class="page">
+        <div id="messagePage" class="page" style="display:none;">
             <div class="background-overlay"></div>
             <div class="content">
                 <h2 class="page-title">💌 رسالتك الخاصة</h2>
@@ -135,10 +165,7 @@
                             <div class="heart-decoration">💜</div>
                         </div>
                         <div class="message-content">
-                            <p>هنا ستكون رسالتك الخاصة المليئة بالحب والمشاعر الجميلة...</p>
-                            <div class="message-placeholder">
-                                <div class="writing-animation">✍️</div>
-                                <p>"في السادس من آب، وُلد محمد...
+                            <p>"في السادس من آب، وُلد محمد...
 لم تكن صدفة، بل كان وعدًا للكون بأن يُنير جانبًا من ظلمته بروحه.
 
 وُلدت معه البدايات الجميلة،
@@ -160,17 +187,14 @@
 سأحبك بصمتي، بكلامي، بغنائي، بدعائي، وبكل الطرق التي لا تعرفها الكلمات.
 
 كل عام وأنت نعمة لا يليق بها إلا الامتنان،
-وكل عام وأنا أحبك، بلا عدد، بلا شروط، بلا نهاية</p>
-                            </div>
+وكل عام وأنا أحبك، بلا عدد، بلا شروط، بلا نهاية"</p>
                         </div>
                         <div class="message-footer">
                             <p>بكل الحب ❤️</p>
                         </div>
                     </div>
                 </div>
-                <button class="back-button" onclick="goBack()">
-                    ← العودة للصفحة الرئيسية
-                </button>
+                <button class="back-button" onclick="goBack()">← العودة للصفحة الرئيسية</button>
             </div>
         </div>
 
@@ -191,8 +215,23 @@
                 alert("كلمة المرور خاطئة! حاول مرة أخرى.");
             }
         }
-    </script>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        function openGift() {
+            document.getElementById("mainPage").style.display = "none";
+            document.getElementById("giftPage").style.display = "block";
+        }
+
+        function openMessage() {
+            document.getElementById("mainPage").style.display = "none";
+            document.getElementById("messagePage").style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("giftPage").style.display = "none";
+            document.getElementById("messagePage").style.display = "none";
+            document.getElementById("mainPage").style.display = "block";
+        }
+
+        function toggleMusic() {
+            var music = document.getElementById("backgroundMusic");
+            var status = document.getElementById("music
